@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "query": "What is your return policy for electronics?",
+    "expected_intent": "return_or_refund",
+    "expected_answer": "Electronics can be returned within 7 days of delivery in original condition with all accessories and packaging. Refunds are processed within 7-10 business days after we receive the item.",
+    "expected_source": "01_return_policy.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 2,
+    "query": "I received a damaged laptop, the screen is cracked. This is unacceptable and I need a replacement immediately.",
+    "expected_intent": "return_or_refund",
+    "expected_answer": "I understand your frustration with receiving a damaged laptop. This requires immediate attention from our specialist team to arrange a replacement and investigate the shipping damage.",
+    "expected_source": "01_return_policy.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "damaged_delivery"
+  },
+  {
+    "id": 3,
+    "query": "Can I return an item without the original packaging?",
+    "expected_intent": "return_or_refund",
+    "expected_answer": "Returns require the original packaging to be eligible. Items must be in original condition with all accessories, packaging, and documentation.",
+    "expected_source": "01_return_policy.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 4,
+    "query": "I want to return this phone but I already used it for 2 weeks and threw away the box. It's still under warranty though, so you have to take it back right?",
+    "expected_intent": "return_or_refund",
+    "expected_answer": "This is a complex case involving return policy, warranty terms, and packaging requirements. Our specialist team needs to review this to determine the best solution.",
+    "expected_source": "01_return_policy.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "complex_edge_case"
+  },
+  {
+    "id": 5,
+    "query": "Where is my order? I placed it 3 days ago.",
+    "expected_intent": "order_status",
+    "expected_answer": "You can track your order status in your account dashboard. Standard delivery takes 3-5 business days. If you provide your order ID, I can help you check the current status.",
+    "expected_source": "03_shipping_policy.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "standard_inquiry"
+  },
+  {
+    "id": 6,
+    "query": "My order shows delivered but I never received it. The package is worth ₹50,000 and I'm worried it was stolen.",
+    "expected_intent": "order_status",
+    "expected_answer": "A missing high-value delivery requires investigation by our security and logistics team to file claims and investigate potential theft.",
+    "expected_source": "03_shipping_policy.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "security_issue"
+  },
+  {
+    "id": 7,
+    "query": "How long does standard shipping take?",
+    "expected_intent": "order_status",
+    "expected_answer": "Standard shipping typically takes 3-5 business days for delivery. Express shipping options are available for faster delivery.",
+    "expected_source": "03_shipping_policy.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 8,
+    "query": "Can I change my delivery address after placing an order?",
+    "expected_intent": "order_status",
+    "expected_answer": "Delivery address changes may be possible if the order hasn't shipped yet. You can request this through your account or contact support with your order ID.",
+    "expected_source": "03_shipping_policy.md",
+    "expected_escalation": false,
+    "difficulty": "medium",
+    "category": "standard_inquiry"
+  },
+  {
+    "id": 9,
+    "query": "What payment methods do you accept?",
+    "expected_intent": "billing_or_payment",
+    "expected_answer": "We accept credit/debit cards (Visa, Mastercard, RuPay), UPI, net banking, EMI options, and Acmera Wallet for payments.",
+    "expected_source": "05_payment_methods.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 10,
+    "query": "I was charged twice for the same order! I need this fixed immediately and want to know why this happened.",
+    "expected_intent": "billing_or_payment",
+    "expected_answer": "A duplicate charge is a serious billing issue that requires immediate investigation by our billing team to process refunds and investigate the cause.",
+    "expected_source": "05_payment_methods.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "billing_dispute"
+  },
+  {
+    "id": 11,
+    "query": "Do you offer EMI options?",
+    "expected_intent": "billing_or_payment",
+    "expected_answer": "Yes, we offer EMI options on purchases above ₹3,000 through select credit cards and payment partners. EMI terms range from 3 to 12 months.",
+    "expected_source": "05_payment_methods.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 12,
+    "query": "My credit card was charged but the order shows as failed. The money is debited from my account but I don't have an order confirmation.",
+    "expected_intent": "billing_or_payment",
+    "expected_answer": "A payment processing discrepancy where money was debited without order confirmation requires urgent investigation by our payment reconciliation team.",
+    "expected_source": "05_payment_methods.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "billing_dispute"
+  },
+  {
+    "id": 13,
+    "query": "What are the specifications of the ProBook laptop?",
+    "expected_intent": "product_info",
+    "expected_answer": "The ProBook features Intel i5/i7 processors, up to 16GB RAM, 512GB SSD storage, 14-inch FHD display, and runs on Windows 11. It's designed for professionals and students.",
+    "expected_source": "09_electronics_catalog.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "product_inquiry"
+  },
+  {
+    "id": 14,
+    "query": "Tell me about your smart home ecosystem products.",
+    "expected_intent": "product_info",
+    "expected_answer": "Our smart home ecosystem includes smart speakers, smart lights, security cameras, and smart plugs that work together through the Acmera Home app for voice and app control.",
+    "expected_source": "17_smart_home_ecosystem.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "product_inquiry"
+  },
+  {
+    "id": 15,
+    "query": "Which laptop is better for gaming, the ProBook or the UltraBook?",
+    "expected_intent": "product_info",
+    "expected_answer": "Based on the catalog, neither the ProBook nor UltraBook are specifically designed for gaming. The ProBook is for professionals and students, while the UltraBook is for portability. For specific gaming recommendations, please contact our product specialists.",
+    "expected_source": "09_electronics_catalog.md",
+    "expected_escalation": false,
+    "difficulty": "medium",
+    "category": "product_inquiry"
+  },
+  {
+    "id": 16,
+    "query": "I need a laptop for video editing with 4K support and heavy rendering. What do you recommend and what if it doesn't meet my professional requirements?",
+    "expected_intent": "product_info",
+    "expected_answer": "Professional video editing requirements need expert consultation to ensure the right specifications and compatibility with your workflow software.",
+    "expected_source": "09_electronics_catalog.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "complex_edge_case"
+  },
+  {
+    "id": 17,
+    "query": "What are the benefits of Premium membership?",
+    "expected_intent": "membership",
+    "expected_answer": "Premium membership offers free delivery, early access to sales, exclusive discounts, priority customer support, and extended return windows. It costs ₹999/year or ₹99/month.",
+    "expected_source": "02_premium_membership.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 18,
+    "query": "How do I cancel my Premium membership?",
+    "expected_intent": "membership",
+    "expected_answer": "You can cancel Premium membership anytime from your account settings. Annual memberships are refunded on a pro-rata basis if cancelled within the first 30 days.",
+    "expected_source": "02_premium_membership.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 19,
+    "query": "I was automatically charged for Premium membership renewal but I wanted to cancel. I never authorized this charge.",
+    "expected_intent": "membership",
+    "expected_answer": "Unauthorized automatic charges and membership billing disputes require immediate review by our billing and membership team to process refunds and investigate.",
+    "expected_source": "02_premium_membership.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "billing_dispute"
+  },
+  {
+    "id": 20,
+    "query": "Can I share my Premium membership with family members?",
+    "expected_intent": "membership",
+    "expected_answer": "Premium membership is for individual use only and cannot be shared. However, we may offer family plans - check the membership page for current options.",
+    "expected_source": "02_premium_membership.md",
+    "expected_escalation": false,
+    "difficulty": "medium",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 21,
+    "query": "Hello, I'm interested in learning more about your company.",
+    "expected_intent": "general",
+    "expected_answer": "Acmera is an Indian e-commerce company offering electronics, smart home devices, and various products. We provide customer support, fast delivery, and quality products. How can I help you today?",
+    "expected_source": "06_support_faq.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "general_inquiry"
+  },
+  {
+    "id": 22,
+    "query": "What are your customer support hours?",
+    "expected_intent": "general",
+    "expected_answer": "Our customer support is available 24/7 through chat, email, and phone. Premium members get priority support with faster response times.",
+    "expected_source": "06_support_faq.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 23,
+    "query": "Someone accessed my account and changed my password. I can't log in and I'm worried about my saved payment methods.",
+    "expected_intent": "general",
+    "expected_answer": "Account security breaches with potential payment information exposure require immediate escalation to our security team to secure the account and investigate unauthorized access.",
+    "expected_source": "10_account_management.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "security_issue"
+  },
+  {
+    "id": 24,
+    "query": "Do you have any ongoing sales or promotions?",
+    "expected_intent": "general",
+    "expected_answer": "We regularly run promotional events and sales. Current offers can be found on our homepage and promotions page. Premium members get early access to sales events.",
+    "expected_source": "07_promotional_events.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "general_inquiry"
+  },
+  {
+    "id": 25,
+    "query": "I bought a ProBook 2 months ago and now it won't turn on. Is this covered under warranty?",
+    "expected_intent": "return_or_refund",
+    "expected_answer": "Products have a 1-year manufacturer warranty covering defects. Since you're past the return window, this would be a warranty claim. Please contact our warranty support team with your order details.",
+    "expected_source": "04_warranty_policy.md",
+    "expected_escalation": false,
+    "difficulty": "medium",
+    "category": "warranty_inquiry"
+  },
+  {
+    "id": 26,
+    "query": "My order was delivered to the wrong address even though I entered it correctly. Now the package is missing and customer support hasn't responded in 3 days.",
+    "expected_intent": "order_status",
+    "expected_answer": "Misdelivered packages with unresponsive support represent a serious service failure requiring immediate escalation to senior support and logistics teams.",
+    "expected_source": "03_shipping_policy.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "complex_edge_case"
+  },
+  {
+    "id": 27,
+    "query": "Can I use Acmera Wallet for payments?",
+    "expected_intent": "billing_or_payment",
+    "expected_answer": "Yes, Acmera Wallet can be used for payments. You can add money to your wallet and use it for purchases, earning cashback on transactions.",
+    "expected_source": "13_acmera_wallet.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  },
+  {
+    "id": 28,
+    "query": "Tell me about your sustainability initiatives.",
+    "expected_intent": "general",
+    "expected_answer": "Acmera is committed to sustainability through eco-friendly packaging, carbon-neutral delivery options, e-waste recycling programs, and partnering with environmentally responsible suppliers.",
+    "expected_source": "18_sustainability.md",
+    "expected_escalation": false,
+    "difficulty": "medium",
+    "category": "general_inquiry"
+  },
+  {
+    "id": 29,
+    "query": "I'm trying to return an item but the website keeps showing an error. I've been trying for 3 days and the return window closes tomorrow. This is ridiculous!",
+    "expected_intent": "return_or_refund",
+    "expected_answer": "Technical issues preventing returns near the deadline could cause real harm to the customer. This requires immediate escalation to technical and support teams to extend the return window and resolve the issue.",
+    "expected_source": "01_return_policy.md",
+    "expected_escalation": true,
+    "difficulty": "hard",
+    "category": "complex_edge_case"
+  },
+  {
+    "id": 30,
+    "query": "What is the referral program and how does it work?",
+    "expected_intent": "membership",
+    "expected_answer": "Our referral program lets you earn rewards by referring friends. Both you and your friend receive benefits when they make their first purchase using your referral code.",
+    "expected_source": "16_referral_program.md",
+    "expected_escalation": false,
+    "difficulty": "easy",
+    "category": "policy_lookup"
+  }
+]

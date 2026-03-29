@@ -74,3 +74,67 @@ project-b/
 - **Order Status Tracker** — simulated API (mock_data/orders.json)
 - **Human Escalation** — structured handoff: what was tried, why escalating
 - **Response Generator** — structured, cited responses with confidence scoring
+
+## Week 1 Baseline Evaluation Results
+
+### Golden Dataset
+- **30 test queries** across 6 intents
+- **9 escalation cases** (billing disputes, security issues, damaged deliveries, complex edge cases)
+- **21 standard queries** (policy lookups, product info, simple returns)
+
+### 4-Dimensional Evaluation
+
+```bash
+# Run full evaluation
+python scripts/eval_harness.py
+
+# Run stratified evaluation (classification by intent)
+python scripts/eval_harness.py --stratified
+
+# Run both
+python scripts/eval_harness.py --both
+```
+
+#### Overall Results (Naive Baseline)
+
+| Dimension | Score | Notes |
+|-----------|-------|-------|
+| **Classification Accuracy** | 90.0% (27/30) | Strong baseline classification |
+| **Response Faithfulness** | 4.70/5.0 | Answers well-grounded in retrieved context |
+| **Response Correctness** | 3.00/5.0 | Semantic match with expected answers |
+| **Routing Accuracy** | 66.7% (20/30) | Never escalates (0% escalation detection) |
+
+#### Per-Intent Classification Accuracy
+
+| Intent | Accuracy | Correct/Total |
+|--------|----------|---------------|
+| billing_or_payment | 100.0% | 5/5 |
+| membership | 100.0% | 5/5 |
+| product_info | 100.0% | 4/4 |
+| return_or_refund | 83.3% | 5/6 |
+| order_status | 80.0% | 4/5 |
+| general | 80.0% | 4/5 |
+
+#### Key Findings
+
+**Strengths:**
+- High classification accuracy across most intents
+- Excellent faithfulness to context (4.70/5.0)
+- Perfect accuracy on billing, membership, and product queries
+
+**Areas for Improvement:**
+- **0% escalation detection** — naive pipeline never escalates (critical for Week 2+)
+- 33% of misclassifications fall back to 'general' intent
+- Response correctness could be improved (3.00/5.0)
+- Minor confusion between return_or_refund and product_info
+
+**Misclassification Patterns:**
+- 1x: return_or_refund → product_info
+- 1x: order_status → general  
+- 1x: general → membership
+
+### Next Steps (Week 2+)
+1. Implement confidence-based escalation logic
+2. Add tool use for customer record lookup and order tracking
+3. Improve classification for edge cases
+4. Build full LangGraph agent with reasoning layer
